@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from askbootstrap.com/preview/vidoe-v2-3/theme-five/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jun 2022 14:14:05 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="64010463354-rrgii5101a16ldadlb7efs073u6imlis.apps.googleusercontent.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="description" content="Askbootstrap" />
+    <meta name="author" content="Askbootstrap" />
+
+    <title>VIDOE - Video Streaming Website HTML Template</title>
+
+    <link rel="icon" style="width:250px" type="image/png" href="img/Ours/Favicon.png" /> 
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link href="css/osahan.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="vendor/owl-carousel/owl.theme.css" />
+  </head>
+  <body class="login-main-body">
+    <section class="login-main-wrapper">
+      <div class="container-fluid pl-0 pr-0">
+        <div class="row no-gutters">
+          <div class="col-md-5 p-5 bg-white full-height">
+            <div class="login-main-left">
+              <div class="text-center mb-5 login-main-left-header pt-4">
+                <img src="img/favicon.png" class="img-fluid" alt="LOGO" />
+                <h5 class="mt-3 mb-3">Welcome to Vidoe</h5>
+                <p>
+                  It is a long established fact that a reader <br />
+                  will be distracted by the readable.
+                </p>
+              </div>
+              <div class="alert alert-danger" role="alert" id="alert">
+              </div>
+              <style>
+                #alert{
+                  position: absolute;
+                  top:27vh;
+                  display: none;
+                  left:0%;
+                  width:100%;
+                  text-align: center;
+                }
+              </style>
+              <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const message = urlParams.get('message'); 
+                if(message != null){
+                  document.getElementById('alert').style.display = 'initial';
+                  document.getElementById('alert').textContent = message;
+                }
+              </script>
+              
+              <form action="/oauth" method="POST">
+                <div class="form-group">
+                  <label>Email or username</label>
+                  <input
+                    type="text"
+                    name="username"
+                    value=""
+                    class="form-control"
+                    placeholder="Enter mobile number"
+                  />
+                  <input
+                    type="hidden"
+                    name="email"
+                    value=""
+                    class="form-control"
+                    placeholder="Password"
+
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    value=""
+                    class="form-control"
+                    placeholder="Password"
+                  />
+                </div>
+                <div class="mt-4">
+                  <div class="row">
+                    <div class="col-12">
+                      <button
+                        type="submit"
+                        class="btn btn-outline-primary btn-block btn-lg"
+                      >
+                        Sign In
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="row">
+                    <div class="col-12">
+                      <a href="https://discord.com/api/oauth2/authorize?client_id=984180527785459802&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fapi%2Fdiscord%2Fredirect&response_type=code&scope=identify%20email">Discord</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+              </form>
+              <script>
+                function onSignIn(googleUser){
+                  console.log("hahahha")
+                }
+              </script>
+
+              <div class="text-center mt-5">
+                <p class="light-gray">
+                  Don’t have an account? <a href="/register">Sign Up</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="login-main-right bg-white p-5 mt-5 mb-5">
+              <div class="owl-carousel owl-carousel-login">
+                <div class="item">
+                  <div class="carousel-login-card text-center">
+                    <img src="img/login.png" class="img-fluid" alt="LOGO" />
+                    <h5 class="mt-5 mb-3">​Watch videos offline</h5>
+                    <p class="mb-4">
+                      when an unknown printer took a galley of type and
+                      scrambled<br />
+                      it to make a type specimen book. It has survived not
+                      <br />only five centuries
+                    </p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="carousel-login-card text-center">
+                    <img src="img/login.png" class="img-fluid" alt="LOGO" />
+                    <h5 class="mt-5 mb-3">Download videos effortlessly</h5>
+                    <p class="mb-4">
+                      when an unknown printer took a galley of type and
+                      scrambled<br />
+                      it to make a type specimen book. It has survived not
+                      <br />only five centuries
+                    </p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="carousel-login-card text-center">
+                    <img src="img/login.png" class="img-fluid" alt="LOGO" />
+                    <h5 class="mt-5 mb-3">Create GIFs</h5>
+                    <p class="mb-4">
+                      when an unknown printer took a galley of type and
+                      scrambled<br />
+                      it to make a type specimen book. It has survived not
+                      <br />only five centuries
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script src="vendor/owl-carousel/owl.carousel.js"></script>
+
+    <script src="js/custom.js"></script>
+    
+  </body>
+
+  <!-- Mirrored from askbootstrap.com/preview/vidoe-v2-3/theme-five/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jun 2022 14:14:06 GMT -->
+</html>

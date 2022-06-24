@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    /* @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap"); */
+
+    /* .btn {
+  padding: 7px;
+  border: none;
+  border-radius: 2px;
+} */
+    body {
+      background-color: #212032;
+      overflow: scroll;
+    }
+    .text-white {
+      color: white;
+    }
+    .text-black {
+      color: black;
+    }
+    .text-primary {
+      color: #fa4c3b;
+    }
+    .text-secondary {
+      color: #1e1d1c;
+    }
+    .primary {
+      background-color: #fa4c3b;
+    }
+    .secondary {
+      background-color: #1e1d1c;
+    }
+
+    .main-bg {
+      background-color: #1e1d1c;
+    }
+    .video-frame {
+      width: 95%;
+      /* height: 650px; */
+      height: 95%; 
+      border-radius: 5px;
+      /* transform: rotate("90"); */
+      object-fit: cover;
+      margin: 1.5% 2.5%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+    /* *BODY  PAGE */
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+    }
+
+    /* *JOINPAGE */
+    #joinPage,
+    .home-page {
+      position: absolute;
+      background-color: #212032;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      overflow: hidden;
+      padding: 0px;
+      margin: 0px;
+      top: 0px;
+    }
+
+    /* Chat-wrapper*/
+    
+
+    
+    .class-control {
+      position: relative;
+    }
+
+    input[type="text"] {
+      background-color: #212032;
+      color: aliceblue;
+      height: 60px;
+      width: 450px;
+      border: 1px solid gray;
+
+      border-radius: 5px;
+      margin-top: -15px;
+    }
+    input[type="text"]:hover {
+      background-color: #212032;
+      color: aliceblue;
+      border: 1px solid grey;
+    }
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-view {
+      position: relative;
+      width: 650px;
+      height: 350px;
+    }
+
+    .video-view .video {
+      position: absolute;
+      /* width: 100%;
+  height: 100%; */
+      object-fit: cover;
+      /* background-color: #ccc; */
+    }
+    .video-view .video-content {
+      position: absolute;
+      /* width: 100%;
+  height: 100%; */
+      object-fit: cover;
+      margin-top: 280px;
+      margin-left: 280px;
+      color: aliceblue;
+      /* background-color: #ccc; */
+    }
+
+    .btn-content {
+      height: 53px;
+      margin-top: -20px;
+      width: 50px;
+      background-color: #e0e0e0;
+      padding: 15px;
+      border-radius: 25px;
+      margin-left: 30px;
+    }
+    .mute-btn-content {
+      height: 50px;
+      margin-top: -20px;
+      width: 50px;
+      background-color: #d3382d;
+      padding: 15px;
+      border-radius: 25px;
+      margin-left: 30px;
+    }
+    .bi {
+      margin-top: -20px;
+    }
+    #micButton:hover {
+      border: none;
+    }
+
+    #camButton:hover {
+      border: none;
+    }
+
+    .grid-page {
+      background-color: #212032;
+    }
+    .vertical-line {
+      margin-left: 30px;
+      /* border-right: 1px solid white; */
+    }
+    .dropdown-item {
+      color: white;
+      background-color: #212032;
+    }
+    .dropdown-item:hover {
+      color: white;
+      background-color: #212032;
+      cursor: pointer;
+    }
+    .copyContent {
+      color: black;
+      background-color: rgb(136, 132, 132);
+      border-radius: 5px;
+      position: absolute;
+      visibility: hidden;
+      width: 100px;
+    }
+    #btnCopy:hover .copyContent {
+      visibility: visible;
+    }
+    .ms-1 {
+      margin-left: 3px;
+    }
+    #video-frame-container {
+      height: 100%;
+      width: 100%;
+      /* border: 1px solid yellow; */
+      border-radius: 10px;
+    }
+    #videoContainer {
+      height: 70vh;
+      /* border: 1px solid #d3382d; */
+      /* overflow: scroll; */
+      display: flex;
+      flex-wrap: wrap;
+      /* flex-direction: column; */
+    }
+    #videoContainer > div {
+      border: "1px solid red ";
+      /* max-width: 33.33%; */
+      height: 100%;
+      flex: 1 1 33.3333%;
+    }
+
+    .participant-wrapper {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0px;
+      right: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.7s;
+      padding-top: 60px;
+      border: 1px solid lightslategrey;
+      border-radius: 15px;
+      background-color: #212032;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .closebtn {
+      font-size: xx-large;
+      color: #e0e0e0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      margin-right: 7px;
+      cursor: pointer;
+      visibility: hidden;
+    }
+    #totalParticipants {
+      /* font-size: xx-large; */
+      color: #e0e0e0;
+      position: fixed;
+      top: 0;
+      margin-top: 25px;
+      margin-left: 7px;
+      cursor: pointer;
+      visibility: hidden;
+    }
+
+    #videoScreenShare {
+      flex-grow: 1;
+      position: absolute;
+      border-radius: 10px;
+      box-shadow: 7px 7px 7px 10px rgb(91, 94, 97);
+    }
+    .chat-wrapper {
+      width: 100%;
+      height: 70vh;
+      z-index: 1;
+      position:fixed;
+      overflow-x: hidden;
+      transition: 0.7s;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      padding:5px;
+      background-color: #1C1C1C;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      
+    }
+    
+    #chatArea{
+      height:88%;
+      width: 100%;
+    }
+    #sendArea{
+      height: 10%;
+    }
+    #txtChat {
+      height:100%;
+      width: 100%;
+      margin: 0;
+      background-color:#121212;
+      border-color:transparent ;
+      padding-left: 5px;
+      transform: scale(1);
+      transition: all 0.5s;
+    }
+    #btnSend {
+      background-color: #1C1C1C;
+      height:80% !important;
+      width: 40px;
+      display: flex;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      top: 4px;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      height: fit-content;
+    }
+    #txtChat:focus{
+      transform: scale(1.05);
+    }
+
+  </style>
+  <%- include('includes/head') %>
+
+  <body id="page-top">
+    <%- include('includes/header') %>
+    <div id="wrapper">
+      <%- include('includes/sidebar',{categories:categories}) %>
+      <div id="content-wrapper">
+        <div class="container-fluid pb-0">
+          <div class="video-block section-padding">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="single-video-left">
+                  <div class="single-video-title box mb-3">
+                    <div class="row" id="videoContainer">
+                    </div>
+                  </div>
+                  <div class="single-video-title box mb-3">
+                    <h2>
+                      <a href="#"
+                        >Contrary to popular belief, Lorem Ipsum (2020) is
+                        not.</a
+                      >
+                    </h2>
+                    <p class="mb-0">
+                      <i class="fas fa-eye"></i> 2,729,347 views
+                    </p>
+                  </div>
+                  <div class="single-video-author box mb-3">
+                    <div class="float-right">
+                      <button class="btn btn-danger" type="button">
+                        Subscribe <strong>1.4M</strong>
+                      </button>
+                      <button class="btn btn btn-outline-danger" type="button">
+                        <i class="fas fa-bell"></i>
+                      </button>
+                    </div>
+                    <img class="img-fluid" src="img/s4.png" alt="" />
+                    <p>
+                      <a href="#"><strong>Osahan Channel</strong></a>
+                      <span
+                        title=""
+                        data-placement="top"
+                        data-toggle="tooltip"
+                        data-original-title="Verified"
+                        ><i class="fas fa-check-circle text-success"></i
+                      ></span>
+                    </p>
+                    <small>Published on Aug 10, 2020</small>
+                  </div>
+                  <div class="single-video-info-content box mb-3">
+                    <h6>Cast:</h6>
+                    <p>
+                      Nathan Drake , Victor Sullivan , Sam Drake , Elena Fisher
+                    </p>
+                    <h6>Category :</h6>
+                    <p>Gaming , PS4 Exclusive , Gameplay , 1080p</p>
+                    <h6>About :</h6>
+                    <p>
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking
+                      at its layout. The point of using Lorem Ipsum is that it
+                      has a more-or-less normal distribution of letters, as
+                      opposed to using 'Content here, content here', making it
+                      look like readable English. Many desktop publishing
+                      packages and web page editors now use Lorem Ipsum as their
+                      default model text, and a search for 'lorem ipsum' will
+                      uncover many web sites still in their infancy. Various
+                      versions have evolved overVarious versions have evolved
+                      over the years, sometimes
+                    </p>
+                    <h6>Tags :</h6>
+                    <p class="tags mb-0">
+                      <span><a href="#">Uncharted 4</a></span>
+                      <span><a href="#">Playstation 4</a></span>
+                      <span><a href="#">Gameplay</a></span>
+                      <span><a href="#">1080P</a></span>
+                      <span><a href="#">ps4Share</a></span>
+                      <span><a href="#">+ 6</a></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="single-video-right">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="adblock">
+                        <div class="d-flex justify-content-end">
+                          <button
+                            type="button"
+                            id="btnStartRecording"
+                            class="btn btn-outline-light"
+                          >
+                            <i class="ri-record-circle-line"></i>
+                          </button>
+                          <button
+                            type="button"
+                            style="display: none"
+                            id="btnStopRecording"
+                            class="btn btn-light"
+                          >
+                            <i class="ri-record-circle-line"></i>
+                          </button>
+                          <!--<button type="button" id="btnRaiseHand" class="btn btn-outline-light ms-1">
+                                                                            <span class="material-icons"> front_hand </span>
+                                                                          </button>-->
+
+                          <input
+                            type="hidden"
+                            id="meetingid"
+                            value=""
+                            readonly=""
+                          />
+                          <div
+                            id="participantsList"
+                            class="participant-wrapper-content text-light"
+                            style="display: none"
+                          >
+                            <div
+                              class="row"
+                              style="
+                                padding: 4px;
+                                margin-top: 1px;
+                                margin-left: 7px;
+                                margin-right: 7px;
+                                border-radius: 3px;
+                                border: 1px solid rgb(61, 60, 78);
+                                background-color: rgb(61, 60, 78);
+                              "
+                            >
+                              <div class="col-3">You</div>
+                              <div></div>
+                            </div>
+                            <br />
+                          </div>
+                          <!-- main page toggle mic-->
+                          <div
+                            class="btn-group"
+                            id="main-pg-mute-mic"
+                            style="display: none"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-light ms-1"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ri-mic-off-line"></i>
+                            </button>
+                          </div>
+                          <div
+                            class="btn-group"
+                            id="main-pg-unmute-mic"
+                            style="display: inline-block"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-light ms-1"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ri-mic-line"></i>
+                            </button>
+                            <!--<div class="dropdown-menu" style="background-color: #212032">
+                                                                              <a class="dropdown-item" href="#"
+                                                                                >Default-Microphone Array(Realtek(R) Audio)</a
+                                                                              >
+                                                                              <a class="dropdown-item" href="#"
+                                                                                >Communications-Microphone Array(Realtek(R) Audio)</a
+                                                                              >
+                                                                              <a class="dropdown-item" href="#"
+                                                                                >Microphone Array(Realtek(R) Audio)</a
+                                                                              >
+                                                                            </div>-->
+                          </div>
+                          <!--main page toggle web-cam-->
+                          <div
+                            class="btn-group"
+                            id="main-pg-cam-off"
+                            style="display: none"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-light ms-1"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ri-camera-off-fill"></i>
+                            </button>
+                          </div>
+                          <div
+                            class="btn-group"
+                            id="main-pg-cam-on"
+                            style="display: inline-block"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-light ms-1"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                              id="videoCamOn"
+                            >
+                              <i class="ri-camera-line"></i>
+                            </button>
+                            <!--<div class="dropdown-menu" style="background-color: #212032">
+                                                                              <a class="dropdown-item" href="#">Integrated Camera</a>
+                                                                              <a class="dropdown-item" href="#">OBS Virtual Camera</a>
+                                                                            </div>-->
+                          </div>
+                          <!--screen share-->
+                          <button
+                            type="button"
+                            id="btnScreenShare"
+                            class="btn btn-outline-light ms-1"
+                          >
+                            <i class="ri-macbook-line"></i>
+                          </button>
+                          <!--participants-->
+                          <button
+                            type="button"
+                            class="btn btn-outline-light ms-1"
+                            onclick="openParticipantWrapper()"
+                          >
+                            <i class="ri-user-3-line"></i>
+                          </button>
+                          <!--chat-->
+                          <button
+                            type="button"
+                            class="btn btn-outline-light ms-1"
+                            onclick="openChatWrapper()"
+                          >
+                            <i class="ri-wechat-line"></i>
+                          </button>
+                          <!--call end-->
+                          <div class="btn-group">
+                            <button
+                              type="button"
+                              class="btn btn-danger ms-1"
+                              data-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ri-phone-line"></i>
+                            </button>
+                            <div
+                              class="dropdown-menu"
+                              style="
+                                background-color: #212032;
+                                color: white;
+                                margin-left: -80px;
+                              "
+                            >
+                              <a class="dropdown-item" id="endCall">End Call</a>
+                              <a class="dropdown-item" id="leaveCall"
+                                >Leave Meeting</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="chat-wrapper col-md-12" id="chatModule">
+
+                        <div
+                          id="chatArea"
+                          class="chat-wrapper-content text-light"
+                        ></div>
+                        <div class="message-box input-group mb-2" id="sendArea">
+                          <input
+                            type="text"
+                            id="txtChat"
+                            ="form-control"
+                            placeholder="Message..."
+                          />
+                          <div id="btnSend" class="input-group-append">
+                            <i class="ri-send-plane-line"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--raise hand pop-up-->
+      <div
+        id="contentRaiseHand"
+        class="alert alert-info col-2"
+        style="left: 10; bottom: 0; position: absolute; height: 60px"
+        role="alert"
+      ></div>
+
+      <video
+        id="videoScreenShare"
+        style="height: 100vh; width: 100vw; display: none; top: 80px"
+      ></video>
+
+      <!--participant wrapper-->
+      <div class="participant-wrapper" id="participants">
+        <div class="participant-wrapper-header text-light">
+          <span
+            class="closebtn"
+            id="ParticipantsCloseBtn"
+            onclick="closeParticipantWrapper()"
+            >&times;</span
+          >
+          <h5 id="totalParticipants"></h5>
+        </div>
+        <hr class="border-light rounded 3" />
+        <div
+          id="participantsList"
+          class="participant-wrapper-content text-light"
+        ></div>
+      </div>
+
+      <!--chat wrapper-->
+      
+    </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+    <%- include('includes/scripts') %>
+    <script src="js/config.js"></script>
+    <script src="js/stream.js"></script>
+    
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.24/videosdk.js"></script>
+  </body>
+  <div id="viewer"></div>
+  
+</html>

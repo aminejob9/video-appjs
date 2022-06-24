@@ -1,0 +1,59 @@
+[debug] [2022-06-24T14:04:27.481Z] ----------------------------------------------------------------------
+[debug] [2022-06-24T14:04:27.483Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Amine Jo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-06-24T14:04:27.483Z] CLI Version:   11.1.0
+[debug] [2022-06-24T14:04:27.483Z] Platform:      win32
+[debug] [2022-06-24T14:04:27.483Z] Node Version:  v16.15.1
+[debug] [2022-06-24T14:04:27.484Z] Time:          Fri Jun 24 2022 16:04:27 GMT+0200 (heure d’été d’Europe centrale)
+[debug] [2022-06-24T14:04:27.485Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-24T14:04:27.488Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-06-24T14:04:27.517Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-24T14:04:27.518Z] > authorizing via signed-in user (amine.job9@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Amine Jo\Desktop\node_ydays_streaming-main
+
+[debug] [2022-06-24T14:04:28.218Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-06-24T14:04:28.218Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2022-06-24T14:04:49.350Z] ----------------------------------------------------------------------
+[debug] [2022-06-24T14:04:49.352Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Amine Jo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-06-24T14:04:49.352Z] CLI Version:   11.1.0
+[debug] [2022-06-24T14:04:49.353Z] Platform:      win32
+[debug] [2022-06-24T14:04:49.353Z] Node Version:  v16.15.1
+[debug] [2022-06-24T14:04:49.354Z] Time:          Fri Jun 24 2022 16:04:49 GMT+0200 (heure d’été d’Europe centrale)
+[debug] [2022-06-24T14:04:49.354Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-24T14:04:49.364Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-24T14:04:49.364Z] > authorizing via signed-in user (amine.job9@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Amine Jo\Desktop\node_ydays_streaming-main
+

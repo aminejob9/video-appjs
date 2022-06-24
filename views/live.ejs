@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+
+  <body id="page-top">
+    <%- include('includes/header') %>
+
+    <div id="wrapper">
+      <%- include('includes/sidebar',{categories:categories}) %>
+
+      <div id="content-wrapper">
+        <div class="container-fluid pb-0">
+          <div class="video-block section-padding">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="single-video-left">
+                  
+                  <div class="single-video-title box mb-3">
+                    <h2>
+                      <a href="#"
+                        >Contrary to popular belief, Lorem Ipsum (2020) is
+                        not.</a
+                      >
+                    </h2>
+                    <p class="mb-0">
+                      <i class="fas fa-eye"></i> 2,729,347 views
+                    </p>
+                  </div>
+                  <div class="single-video-author box mb-3">
+                    <div class="float-right">
+                      <button class="btn btn-danger" type="button">
+                        Subscribe <strong>1.4M</strong>
+                      </button>
+                      <button class="btn btn btn-outline-danger" type="button">
+                        <i class="fas fa-bell"></i>
+                      </button>
+                    </div>
+                    <img class="img-fluid" src="img/s4.png" alt="" />
+                    <p>
+                      <a href="#"><strong>Osahan Channel</strong></a>
+                      <span
+                        title=""
+                        data-placement="top"
+                        data-toggle="tooltip"
+                        data-original-title="Verified"
+                        ><i class="fas fa-check-circle text-success"></i
+                      ></span>
+                    </p>
+                    <small>Published on Aug 10, 2020</small>
+                  </div>
+                  <div class="single-video-info-content box mb-3">
+                    <h6>Cast:</h6>
+                    <p>
+                      Nathan Drake , Victor Sullivan , Sam Drake , Elena Fisher
+                    </p>
+                    <h6>Category :</h6>
+                    <p>Gaming , PS4 Exclusive , Gameplay , 1080p</p>
+                    <h6>About :</h6>
+                    <p>
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking
+                      at its layout. The point of using Lorem Ipsum is that it
+                      has a more-or-less normal distribution of letters, as
+                      opposed to using 'Content here, content here', making it
+                      look like readable English. Many desktop publishing
+                      packages and web page editors now use Lorem Ipsum as their
+                      default model text, and a search for 'lorem ipsum' will
+                      uncover many web sites still in their infancy. Various
+                      versions have evolved overVarious versions have evolved
+                      over the years, sometimes
+                    </p>
+                    <h6>Tags :</h6>
+                    <p class="tags mb-0">
+                      <span><a href="#">Uncharted 4</a></span>
+                      <span><a href="#">Playstation 4</a></span>
+                      <span><a href="#">Gameplay</a></span>
+                      <span><a href="#">1080P</a></span>
+                      <span><a href="#">ps4Share</a></span>
+                      <span><a href="#">+ 6</a></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="single-video-right">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="adblock">
+                        <div class="d-flex justify-content-end">
+                          <button
+                            type="button"
+                            id="btnStartRecording"
+                            class="btn btn-outline-light"
+                          >
+                            <i class="ri-record-circle-line"></i>
+                          </button>
+                          <button
+                            type="button"
+                            style="display: none"
+                            id="btnStopRecording"
+                            class="btn btn-light"
+                          >
+                            <i class="ri-record-circle-line"></i>
+                          </button>
+                          <!--<button type="button" id="btnRaiseHand" class="btn btn-outline-light ms-1">
+                                                              <span class="material-icons"> front_hand </span>
+                                                            </button>-->
+                          <span class="vertical-line"></span>
+
+                          <input
+                            type="hidden"
+                            id="meetingid"
+                            value=""
+                            readonly=""
+                          />
+                          <div
+                            id="participantsList"
+                            class="participant-wrapper-content text-light"
+                            style="display: none"
+                          ></div>
+                          <!-- main page toggle mic-->
+                          <div
+                            class="btn-group"
+                            id="main-pg-mute-mic"
+                            style="display: none"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-light ms-1"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ri-mic-off-line"></i>
+                            </button>
+                          </div>
+                          <div
+                            class="btn-group"
+                            id="main-pg-unmute-mic"
+                            style="display: inline-block"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-light ms-1"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ri-mic-line"></i>
+                            </button>
+                            <!--<div class="dropdown-menu" style="background-color: #212032">
+                                                                <a class="dropdown-item" href="#"
+                                                                  >Default-Microphone Array(Realtek(R) Audio)</a
+                                                                >
+                                                                <a class="dropdown-item" href="#"
+                                                                  >Communications-Microphone Array(Realtek(R) Audio)</a
+                                                                >
+                                                                <a class="dropdown-item" href="#"
+                                                                  >Microphone Array(Realtek(R) Audio)</a
+                                                                >
+                                                              </div>-->
+                          </div>
+                          <!--main page toggle web-cam-->
+                          <div
+                            class="btn-group"
+                            id="main-pg-cam-off"
+                            style="display: none"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-light ms-1"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ri-camera-off-fill"></i>
+                            </button>
+                          </div>
+                          <div
+                            class="btn-group"
+                            id="main-pg-cam-on"
+                            style="display: inline-block"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-light ms-1"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                              id="videoCamOn"
+                            >
+                              <i class="ri-camera-line"></i>
+                            </button>
+                            <!--<div class="dropdown-menu" style="background-color: #212032">
+                                                                <a class="dropdown-item" href="#">Integrated Camera</a>
+                                                                <a class="dropdown-item" href="#">OBS Virtual Camera</a>
+                                                              </div>-->
+                          </div>
+                          <!--screen share-->
+                          <button
+                            type="button"
+                            id="btnScreenShare"
+                            class="btn btn-outline-light ms-1"
+                          >
+                            <i class="ri-macbook-line"></i>
+                          </button>
+                          <span class="vertical-line"></span>
+                          <!--participants-->
+                          <button
+                            type="button"
+                            class="btn btn-outline-light ms-1"
+                            onclick="openParticipantWrapper()"
+                          >
+                            <i class="ri-user-3-line"></i>
+                          </button>
+                          <!--chat-->
+                          <button
+                            type="button"
+                            class="btn btn-outline-light ms-1"
+                            onclick="openChatWrapper()"
+                          >
+                            <i class="ri-wechat-line"></i>
+                          </button>
+                          <span class="vertical-line"></span>
+                          <!--call end-->
+                          <div class="btn-group">
+                            <button
+                              type="button"
+                              class="btn btn-danger ms-1"
+                              data-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ri-phone-line"></i>
+                            </button>
+                            <div
+                              class="dropdown-menu"
+                              style="
+                                background-color: #212032;
+                                color: white;
+                                margin-left: -80px;
+                              "
+                            >
+                              <a class="dropdown-item" id="endCall">End Call</a>
+                              <a class="dropdown-item" id="leaveCall"
+                                >Leave Meeting</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-title">
+                        <div class="btn-group float-right right-action">
+                          <a
+                            href="#"
+                            class="right-action-link text-gray"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            Sort by
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"
+                              ><i class="fas fa-fw fa-star"></i> &nbsp; Top
+                              Rated</a
+                            >
+                            <a class="dropdown-item" href="#"
+                              ><i class="fas fa-fw fa-signal"></i> &nbsp;
+                              Viewed</a
+                            >
+                            <a class="dropdown-item" href="#"
+                              ><i class="fas fa-fw fa-times-circle"></i> &nbsp;
+                              Close</a
+                            >
+                          </div>
+                        </div>
+                        <h6>Up Next</h6>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%- include('includes/footer') %>
+      </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div
+      class="modal fade"
+      id="logoutModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Select "Logout" below if you are ready to end your current session.
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-secondary"
+              type="button"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('includes/scripts') %>
+  </body>
+
+  <!-- Mirrored from askbootstrap.com/preview/vidoe-v2-3/theme-five/video-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jun 2022 14:14:05 GMT -->
+</html>

@@ -1,0 +1,195 @@
+<style>
+  .navbar-nav{
+    background-color:#161518 !important;
+  }
+</style>
+
+<ul class="sidebar navbar-nav" style="
+    margin: auto;
+    padding-left: 1%;
+">
+    <!-- <li class="nav-item active">
+      <a class="nav-link" href="/">
+        <i class="fas fa-fw fa-home"></i>
+        <span>Home</span>
+      </a>
+    </li> -->
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="/channels">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Channels</span>
+      </a>
+    </li> -->
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="/single_channel">
+        <i class="fas fa-fw fa-user-alt"></i>
+        <span>Single Channel</span>
+      </a>
+    </li> -->
+    <% if (isLogged == 1){ %>
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="/channels">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Channels</span>
+      </a>
+    </li> -->
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="/live">
+        <i class="fas fa-fw fa-video"></i>
+        <span>Start live</span>
+      </a>
+    </li> -->
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="/upload">
+        <i class="fas fa-fw fa-cloud-upload-alt"></i>
+        <span>Upload Video</span>
+      </a>
+    </li> -->
+    <!-- <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Pages</span>
+      </a>
+      <div class="dropdown-menu">
+        <h6 class="dropdown-header">Login Screens:</h6>
+        <a class="dropdown-item" href="/login">Login</a>
+        <a class="dropdown-item" href="/register">Register</a>
+        <a class="dropdown-item" href="forgot-password.html"
+          >Forgot Password</a
+        >
+        <div class="dropdown-divider"></div>
+        <h6 class="dropdown-header">Other Pages:</h6>
+        <a class="dropdown-item" href="404.html">404 Page</a>
+        <a class="dropdown-item" href="blank.html">Blank Page</a>
+      </div>
+    </li> -->
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="/history">
+        <i class="fas fa-fw fa-history"></i>
+        <span>History Page</span>
+      </a>
+    </li> -->
+    <li class="nav-item channel-sidebar-list" style="
+    background: #80808012;
+    /* border-radius: 25%; */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 70px;
+">
+      <i class="ri-user-follow-line" style="
+      font-size: 27px;
+      color: white;
+      border-radius: 50%;
+      background: #8080801f;
+      padding: 10px;
+  "></i>
+    <ul>
+      <li>
+        <a href="subscriptions.html">
+          <img class="img-fluid" alt="" src="/img/s1.png" /> Your Life
+        </a>
+      </li>
+      <li>
+        <a href="subscriptions.html">
+          <img class="img-fluid" alt="" src="/img/s2.png" /> Unboxing
+          <span class="badge badge-warning">2</span>
+        </a>
+      </li>
+      <li>
+        <a href="subscriptions.html">
+          <img class="img-fluid" alt="" src="/img/s3.png" /> Product /
+          Service
+        </a>
+      </li>
+      <li>
+        <a href="subscriptions.html">
+          <img class="img-fluid" alt="" src="/img/s4.png" /> Gaming
+        </a>
+      </li>
+    </ul>
+  </li>
+  
+    
+    <%  }else{%>
+      <!-- <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="categories.html"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fas fa-fw fa-list-alt"></i>
+          <span>Categories</span>
+        </a>
+        <div class="dropdown-menu" id="categoriesList">
+        </div>
+      </li> -->
+   
+        <li class="nav-item channel-sidebar-list" style="
+        background: #80808012;
+        /* border-radius: 25%; */
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        width: 70px;
+    ">
+          <i class="ri-user-follow-line" style="
+          font-size: 27px;
+          color: white;
+          border-radius: 50%;
+          background: #8080801f;
+          padding: 10px;
+      "></i>
+        <ul>
+          <li>
+            <a href="subscriptions.html">
+              <img class="img-fluid" alt="" src="/img/s1.png" /> Your Life
+            </a>
+          </li>
+          <li>
+            <a href="subscriptions.html">
+              <img class="img-fluid" alt="" src="/img/s2.png" /> Unboxing
+              <span class="badge badge-warning">2</span>
+            </a>
+          </li>
+          <li>
+            <a href="subscriptions.html">
+              <img class="img-fluid" alt="" src="/img/s3.png" /> Product /
+              Service
+            </a>
+          </li>
+          <li>
+            <a href="subscriptions.html">
+              <img class="img-fluid" alt="" src="/img/s4.png" /> Gaming
+            </a>
+          </li>
+        </ul>
+      </li>
+    <% }%>
+    
+
+  </ul>
+
+  <script>
+    var tickets = <%- categories %>;    
+    console.log(tickets);
+   var ticketsHTML =""
+        tickets.forEach(ticket => {
+          console.log(ticket)
+          ticketsHTML +='<a class="dropdown-item" href="#">' + ticket.name + '</a>'            
+        });
+    $("#categoriesList").html(ticketsHTML); 
+  </script>
+  

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('includes/head') %>
+
+<body id="page-top">
+    <%- include('includes/header') %>
+
+<div id="wrapper">
+
+    <%- include('includes/sidebar') %>
+    <style>
+        .img-fluid {
+            max-height: 30vh;
+        }
+        .control-label {
+            font-size: 18px;
+        }
+        .form-control {
+            border-radius: 12px;
+        }
+        .custom-select {
+            border-radius: 12px;
+        }
+        footer{
+            margin-top: 18vh;
+        }
+    </style>
+
+<div class="single-channel-page" id="content-wrapper">
+<div class="single-channel-image">
+<img class="img-fluid" alt="" src="https://static.vecteezy.com/system/resources/previews/002/144/780/original/gaming-banner-for-games-with-glitch-effect-neon-light-on-text-illustration-design-free-vector.jpg">
+<div class="channel-profile">
+<img class="channel-profile-img" alt="" src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_960_720.png">
+<div class="social hidden-xs">
+Social &nbsp;
+<a class="fb" href="#">Facebook</a>
+<a class="tw" href="#">Twitter</a>
+<a class="gp" href="#">Google</a>
+</div>
+</div>
+</div>
+<div id="content-page">
+<div class="single-channel-nav">
+<nav class="navbar navbar-expand-lg navbar-light">
+<a class="channel-brand" href="#"><%= room1 %><span title="" data-placement="top" data-toggle="tooltip" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></span></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item active">
+<a class="nav-link" href="#">Videos <span class="sr-only">(current)</span></a>
+</li>
+<!-- <li class="nav-item">
+<a class="nav-link" href="#">Discussion</a>
+</li> -->
+<!-- <li class="nav-item">
+<a class="nav-link" href="#" onclick="aboutFunction()">About</a>
+</li> -->
+<% if(user_state == 1){ %>
+<li class="nav-item">
+<a class="nav-link" href="#" onclick="personalFunction()">Personnaliser la chaîne</a>
+</li>
+<% }else{} %>
+</ul>
+<form class="form-inline my-2 my-lg-0">
+<button class="btn btn-outline-danger btn-sm" type="button" onclick="follow()">Followers <strong>1.4M</strong></button>
+<span title="" data-placement="top" data-toggle="tooltip" data-original-title="Following"><i class="fas fa-check-circle text-success"></i></span>
+</form>
+</div>
+</nav>
+</div>
+<div class="container-fluid">
+<div class="video-block section-padding">
+<div class="row">
+<div class="col-md-12">
+<div class="main-title">
+<!-- <div class="btn-group float-right right-action">
+<a href="#" class="right-action-link text-gray" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Sort by <i class="fa fa-caret-down" aria-hidden="true"></i>
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<a class="dropdown-item" href="#"><i class="fas fa-fw fa-star"></i> &nbsp; Top Rated</a>
+<a class="dropdown-item" href="#"><i class="fas fa-fw fa-signal"></i> &nbsp; Viewed</a>
+<a class="dropdown-item" href="#"><i class="fas fa-fw fa-times-circle"></i> &nbsp; Close</a>
+</div>
+</div> -->
+<h6>Videos</h6>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v1.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v2.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+ </div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v3.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-danger">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Unverified"><i class="fas fa-frown text-danger"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v4.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v5.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v6.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-danger">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Unverified"><i class="fas fa-frown text-danger"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v7.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v8.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v1.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+ <div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v2.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v3.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-danger">
+Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Unverified"><i class="fas fa-frown text-danger"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-3">
+<div class="video-card">
+<div class="video-card-image">
+<a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
+<a href="#"><img class="img-fluid" src="/img/v4.png" alt=""></a>
+<div class="time">3:50</div>
+</div>
+<div class="video-card-body">
+<div class="video-title">
+<a href="#">There are many variations of passages of Lorem</a>
+</div>
+<div class="video-page text-success">
+ Education <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+</div>
+<div class="video-view">
+1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<!--Code de la partie about-->
+<div style="display: none">  
+<div id="about_div">
+    <div class="single-channel-nav">
+        <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="channel-brand" href="#"><%= room1 %><span title="" data-placement="top" data-toggle="tooltip" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="#" onclick="videoFunction()">Videos <span class="sr-only">(current)</span></a>
+        </li>
+        <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Discussion</a>
+        </li> -->
+        <!-- <li class="nav-item active">
+        <a class="nav-link" href="#" onclick="aboutFunction()">About</a>
+        </li> -->
+        <li class="nav-item">
+        <a class="nav-link" href="#" onclick="personalFunction()">Personnaliser la chaîne</a>
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-danger btn-sm" type="button" onclick="follow()">Followers <strong>1.4M</strong></button>
+        <span title="" data-placement="top" data-toggle="tooltip" data-original-title="Following"><i class="fas fa-check-circle text-success"></i></span>
+        </form>
+        </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-8 m-3 mt-4">
+            <h5>Description de la chaîne</h5>
+            <p style="font: size 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aut beatae corrupti eos voluptas facere dolores qui consectetur dolorem, velit ratione officia quidem quos suscipit. Cupiditate quasi ex similique at!</p>
+            <hr>
+            <div style="font: size 16px;">
+            Twitter: <a href="">twitter.com</a><br>
+            Facebook: <a href="">instagram.com</a><br>
+            Instagram: <a href="">instagram.com</a>
+            </div>            
+        </div>
+        <div class="col-3 m-3 mt-4">
+            <h5>Informations de la chaîne</h5><hr>
+            <p style="font: size 16px;">Inscrit depuis le 13 Juin 2022 </p>
+        </div>
+    </div>
+</div>
+</div>
+<!--Code de la partie about-->
+
+<!--Code de la partie personnalisation-->
+<div style="display: none">
+    <div id="personal_div">
+        <div class="single-channel-nav">
+            <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="channel-brand" href="#"><%= room1 %><span title="" data-placement="top" data-toggle="tooltip" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="#" onclick="videoFunction()">Videos <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Discussion</a>
+            </li> -->
+            <!-- <li class="nav-item">
+            <a class="nav-link" href="#" onclick="aboutFunction()">About</a>
+            </li> -->
+            <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="personalFunction()">Personnaliser la chaîne</a>
+            </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-danger btn-sm" type="button" onclick="follow()">Followers <strong>1.4M</strong></button>
+            <span title="" data-placement="top" data-toggle="tooltip" data-original-title="Following"><i class="fas fa-check-circle text-success"></i></span>
+            </form>
+            </div>
+            </nav>
+        </div>
+        <div>
+            <div class="m-3 mt-4">
+                <div class="form-group" style="width:100%">
+                    <label class="control-label">Description <span class="required">*</span></label>
+                    <textarea class="form-control border-form-control" name="" id="" rows="7"><%= description %></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label class="control-label">Twitter<span class="required">*</span></label>
+                    <input class="form-control border-form-control" value=""  type="text" name="password">
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label class="control-label">Facebook<span class="required">*</span></label>
+                    <input class="form-control border-form-control" value=""  type="text" name="confirmPassword">
+                    
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label class="control-label">Instagram<span class="required">*</span></label>
+                    <input class="form-control border-form-control" value=""  type="text" name="password">
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label class="control-label">TikTok<span class="required">*</span></label>
+                    <input class="form-control border-form-control" value=""  type="text" name="confirmPassword">
+                    
+                    </div>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Example file input</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>      
+            </div>
+        </div>
+    </div>
+</div>
+<!--Code de la partie personnalisation-->
+
+<%- include('includes/footer') %>
+
+<script>
+    let html1 = document.getElementById("content-page").innerHTML;
+    document.getElementById("content-page").innerHTML = html1;
+
+    function aboutFunction(){
+        let html = document.getElementById("about_div").innerHTML;
+        document.getElementById("content-page").innerHTML = html;
+    }
+    function personalFunction(){
+        let html = document.getElementById("personal_div").innerHTML;
+        document.getElementById("content-page").innerHTML = html;
+    }
+    function videoFunction(){
+        document.getElementById("content-page").innerHTML = html1;
+    }
+</script>
+
+
+</div>
+
+</div>
+
+
+<a class="scroll-to-top rounded" href="#page-top">
+<i class="fas fa-angle-up"></i>
+</a>
+
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+<a class="btn btn-primary" href="login.html">Logout</a>
+</div>
+</div>
+</div>
+</div>
+
+<%- include('includes/scripts') %>
+<script>
+   function follow(){
+    // if(user_state == 1){
+    //   // The connected user ca not follow is own channel
+    // }else{
+        var user_state = <%= user_state %>;
+        var room_name = <%= room1 %>;
+
+        $.ajax({
+            type: 'post',
+            url: '/ajax/follow',
+            data: {user_state,room_name},
+            dataType: 'text'
+        })
+        .done(function(data){
+            $('h1').innerHTML(data);
+        });
+    // }
+       
+};
+
+</script>
+
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/vidoe-v2-3/theme-five/single-channel.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jun 2022 14:14:05 GMT -->
+</html>

@@ -1,0 +1,216 @@
+<style>
+  .search_header {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .search_button {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .nav_site {
+    background-color: #161518 !important;
+  }
+  .div_btn_stream {
+    padding-top: 4px;
+    padding: px;
+  }
+  .icone_stream {
+    font-size: 13px;
+    color: white;
+    border-radius: 50%;
+    background: #9557ff;
+    padding: 10px;
+  }
+  .btn_stream1 {
+    background-color: #9557ff42;
+    color: white;
+    font-size: 15px;
+    background: none;
+    background: #9557ff42;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    padding: 10px;
+    transform: scale(1);
+    transition: all 0.3s;
+  }
+  .btn_stream1:hover {
+    background-color: #9557FF;
+    color: white;
+    transform: scale(1.05)
+  }
+</style>
+<nav
+  class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top nav_site"
+>
+  &nbsp;
+  <!-- <button
+        class="btn btn-link btn-sm text-secondary order-1 order-sm-0"
+        id="sidebarToggle"
+      >
+        <i class="fas fa-bars"></i>
+      </button> -->
+  &nbsp;&nbsp;
+  <a class="navbar-brand mr-1" href="/"
+    ><img
+      style="width: 100px"
+      class="img-fluid"
+      alt=""
+      src="/img/Ours/Asset 4.svg"
+  /></a>
+
+  <form
+    class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 osahan-navbar-search"
+  >
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control search_header"
+        placeholder="Search for..."
+      />
+      <div class="input-group-append search_button">
+        <button class="btn btn-light" type="button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="div_btn_stream">
+    <a href="" class="btn btn-light btn_stream1">
+    <i
+      class="ri-vidicon-line"
+      class="icone_stream"
+      style="
+        font-size: 13px;
+        color: white;
+        border-radius: 50%;
+        background: #9557ff;
+        padding: 10px;
+      "
+    ></i>
+    <div class="input-group-append search_button" style="display: inline-block">
+        Start live
+    </div>
+  </a>
+  </div>
+  &nbsp;&nbsp;&nbsp;
+  <div class="div_btn_stream">
+    <a href="/meeting" class="btn btn-light btn_stream1" id="startMeeting">
+      <i
+        class="ri-group-line"
+        class="icone_stream"
+        style="
+          font-size: 13px;
+          color: white;
+          border-radius: 50%;
+          background: #9557ff;
+          padding: 10px;
+        "
+      ></i>
+      <div
+        class="input-group-append search_button"
+        style="display: inline-block"
+      >
+        Start meeting
+      </div>
+    </a>
+  </div>
+
+  <ul class="navbar-nav ml-auto ml-md-0 osahan-right-navbar">
+    <% if (isLogged == 1){ %>
+    <!-- <li class="nav-item mx-1">
+          <a class="nav-link" href="/live">
+            <i class="fas fa-fw fa-video"></i>
+            Start live
+          </a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link" href="/upload">
+            <i class="fas fa-plus-circle fa-fw"></i>
+            Upload Video
+          </a>
+        </li> -->
+    <li class="nav-item dropdown no-arrow mx-1">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="alertsDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="fas fa-bell fa-fw"></i>
+        <span class="badge badge-danger">9+</span>
+      </a>
+      <div
+        class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="alertsDropdown"
+      >
+        <a class="dropdown-item" href="#"
+          ><i class="fas fa-fw fa-edit"></i> &nbsp; Action</a
+        >
+        <a class="dropdown-item" href="#"
+          ><i class="fas fa-fw fa-headphones-alt"></i> &nbsp; Another action</a
+        >
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"
+          ><i class="fas fa-fw fa-star"></i> &nbsp; Something else here</a
+        >
+      </div>
+    </li>
+    <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
+      <a
+        class="nav-link dropdown-toggle user-dropdown-link"
+        href="#"
+        id="userDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <img alt="Avatar" src="/img/user.png" />
+        <%= username %>
+      </a>
+      <div
+        class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="userDropdown"
+      >
+        <!-- <a class="dropdown-item" href="/account"
+              ><i class="fas fa-fw fa-user-circle"></i> &nbsp; My Account</a
+            > -->
+        <!-- <a class="dropdown-item" href="subscriptions.html"
+              ><i class="fas fa-fw fa-video"></i> &nbsp; Subscriptions</a
+            <i class="fas fa-fw fa-video"></i>
+            > -->
+        <a class="dropdown-item" href="/settings"
+          ><i class="fas fa-fw fa-cog"></i> &nbsp; Settings</a
+        >
+        <a class="dropdown-item" href="<%= channel_name %>"
+          ><i class="fas fa-fw fa-user"></i> &nbsp; Channel</a
+        >
+        <a class="dropdown-item" href="/live"
+          ><i class="fas fa-fw fa-video"></i> &nbsp; Start live</a
+        >
+        <a class="dropdown-item" href="#"
+          ><i class="fas fa-fw fa-list-alt"></i> &nbsp; Dashboard</a
+        >
+        <!-- <a class="dropdown-item" href="/history"><i class="fas fa-fw fa-history"></i> &nbsp; History</a> -->
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/logout"
+          ><i class="fas fa-fw fa-sign-out-alt"></i> &nbsp; Logout</a
+        >
+      </div>
+    </li>
+    <% }else{ %>
+    <li class="nav-item mx-1">
+      <a class="nav-link" href="/login">
+        <i class="fas fa-fw fa-user-alt"></i>
+        Login
+      </a>
+    </li>
+    <% } %>
+  </ul>
+</nav>
